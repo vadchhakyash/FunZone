@@ -1,0 +1,334 @@
+<!-- <!doctype html> -->
+<html
+  id="sadoodle"
+  lang="en"
+  class="wf-asap-n4-active wf-asap-n7-active wf-active"
+>
+  <head>
+    <title>FunZone Baseball</title>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@doodlecricket" />
+    <meta
+      name="twitter:title"
+      content="Doodle Baseball - Fourth of July 2019"
+    />
+    <meta
+      name="twitter:description"
+      content="Doodle Baseball brings the classic game of baseball to life with charming hand-drawn graphics and simple yet addictive gameplay. Step up to the plate and swing for the fences as you aim to hit home runs and score runs against your opponent. With easy-to-learn controls and a nostalgic doodle style, this game offers hours of fun for baseball fans of all ages."
+    />
+    <meta name="twitter:creator" content="@doodlecricket" />
+    <meta
+      name="twitter:image"
+      content="https://doodlecricket.github.io/doodle-baseball.png"
+    />
+
+    <meta
+      property="og:title"
+      content="Play Google Doodle Baseball - Fourth of July 2019"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://doodlecricket.github.io/doodle-baseball"
+    />
+    <meta
+      property="og:image"
+      content="https://doodlecricket.github.io/doodle-baseball.png"
+    />
+    <meta
+      property="og:description"
+      content="Doodle Baseball brings the classic game of baseball to life with charming hand-drawn graphics and simple yet addictive gameplay. Step up to the plate and swing for the fences as you aim to hit home runs and score runs against your opponent. With easy-to-learn controls and a nostalgic doodle style, this game offers hours of fun for baseball fans of all ages."
+    />
+    <meta property="og:site_name" content="Doodle Cricket Game" />
+
+    <link
+      rel="canonical"
+      href="https://doodlecricket.github.io/doodle-baseball"
+    />
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+      defer
+    ></script>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script>
+      tailwind.config = {
+        corePlugins: {
+          container: false,
+        },
+      };
+    </script>
+
+    <meta
+      name="description"
+      content="Doodle Baseball (Fourth of July 2019) brings the classic game of baseball to life with charming hand-drawn graphics and simple yet addictive gameplay. Step up to the plate and swing for the fences as you aim to hit home runs and score runs against your opponent. With easy-to-learn controls and a nostalgic doodle style, this game offers hours of fun for baseball fans of all ages."
+    />
+
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="./icons/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="./icons/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="./icons/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="./icons/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="./icons/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="./icons/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="./icons/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="./icons/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./icons/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./icons/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./icons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="./icons/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./icons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./css/styles.css"
+    />
+    <style>
+      #hpcanvas {
+        max-height: calc(100%);
+      }
+
+      .doodle-games {
+        position: fixed;
+        top: 90px;
+        left: 10px;
+        display: flex;
+        justify-content: flex-end;
+        text-align: center;
+        line-height: 12px;
+        font-weight: bold;
+      }
+
+      .doodle-games a {
+        padding: 2px 4px;
+        font-size: smaller;
+        text-decoration: none;
+        color: black;
+      }
+
+      .doodle-games-icon {
+        width: 44px;
+        height: 44px;
+        padding: 4px;
+        background-color: white;
+        border: green;
+        border-radius: 100%;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+        color: black;
+      }
+
+      .doodle-cricket {
+        position: fixed;
+        top: 90px;
+        left: 80px;
+        display: flex;
+        justify-content: flex-end;
+        text-align: center;
+        line-height: 12px;
+        font-weight: bold;
+      }
+
+      .doodle-cricket a {
+        padding: 2px 4px;
+        font-size: smaller;
+        text-decoration: none;
+        color: black;
+      }
+
+      .doodle-jump {
+        position: fixed;
+        top: 170px;
+        left: 10px;
+        display: flex;
+        justify-content: flex-end;
+        text-align: center;
+        line-height: 12px;
+        font-weight: bold;
+      }
+
+      .doodle-jump a {
+        padding: 2px 4px;
+        font-size: smaller;
+        text-decoration: none;
+        color: black;
+      }
+
+      .doodle-halloween {
+        position: fixed;
+        top: 170px;
+        left: 80px;
+        display: flex;
+        justify-content: flex-end;
+        text-align: center;
+        line-height: 12px;
+        font-weight: bold;
+      }
+
+      .doodle-halloween a {
+        padding: 2px 4px;
+        font-size: smaller;
+        text-decoration: none;
+        color: black;
+      }
+
+      .doodle-games-icon {
+        width: 44px;
+        height: 44px;
+        padding: 4px;
+        background-color: white;
+        border: green;
+        border-radius: 100%;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+        color: black;
+      }
+
+      .cricket-games {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 100px;
+        display: flex;
+        justify-content: flex-end;
+        z-index: 10;
+      }
+    </style>
+
+ 
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Asap%7CAsap:bold"
+      media="all"
+    />
+      <script src="./js/game.js" defer></script>
+
+  </head>
+
+
+  <body class="column">
+    <div
+      id="splash"
+      class="fixed h-screen inset-0 z-9999 flex items-center justify-center bg-gray-900 overflow-y-auto"
+    >
+      <div class="text-center">
+        <h1 class="text-white text-3xl font-bold">
+          Welcome to Doodle Baseball
+        </h1>
+        <img
+          src="./icons/android-icon-192x192.png"
+          alt="Logo"
+          class="w-32 h-32 mx-auto mb-4"
+        />
+        <button
+          id="play"
+          class="pointer-events-auto px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 focus:outline-none"
+        >
+          ▶ Play
+        </button>
+
+        <div
+          class="mx-auto max-w-xs mt-8 text-base text-white prose prose-headings:font-bold prose-headings:text-white prose-p:text-white prose-p:text-sm"
+        >
+          <p class="mb-2">
+            Step into a baseball diamond where your favorite ballpark snacks
+            come to life! Swing as a mighty hot dog, a powerful popcorn kernel,
+            a cool ice cream cone, or a juicy watermelon slice.
+          </p>
+          <h2 class="my-2">How to Play</h2>
+          <p class="mb-2">
+            Simply click your mouse or tap your screen to swing when the peanut
+            pitcher throws the ball. Time your hits perfectly to score runs!
+          </p>
+          <h2 class="my-2">Your Team</h2>
+          <ul class="list-disc">
+            <li>Hot Dog: Your classic cleanup hitter</li>
+            <li>Popcorn: Quick and poppy at the plate</li>
+            <li>Ice Cream: Cool under pressure</li>
+            <li>Watermelon: The heavy hitter</li>
+          </ul>
+          <h2 class="my-2">Click Play to begin</h2>
+        </div>
+      </div>
+    </div>
+
+    
+    <h1 class="text-center absolute top-0 left-0 right-0 z-10 pt-1 text-white">
+      Play Doodle Baseball
+    </h1>
+    <div id="hplogo" class="content">
+  <canvas id="hpcanvas"></canvas>
+</div>
+
+  </body>
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  document.body.classList.add('fullgame');
+  document.querySelector('#splash')?.remove();
+});
+</script>
+</html>

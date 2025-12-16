@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Doodle Garden Gnomes Online</title>
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@doodlecricket" />
+    <meta name="twitter:title" content="Doodle Garden Gnomes Online" />
+    <meta
+      name="twitter:description"
+      content="Doodle Garden Gnomes is a charming online game where players tend to a magical garden inhabited by quirky gnomes. With colorful doodle-style graphics and engaging tasks, players can plant flowers, design pathways, and keep the mischievous gnomes in check for a delightful gaming experience."
+    />
+    <meta name="twitter:creator" content="@doodlecricket" />
+    <meta
+      name="twitter:image"
+      content="https://doodlecricket.github.io/doodle-garden-gnomes.webp"
+    />
+
+    <meta property="og:title" content="Doodle Garden Gnomes Online" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://doodlecricket.github.io/doodle-garden-gnomes"
+    />
+    <meta
+      property="og:image"
+      content="https://doodlecricket.github.io/doodle-garden-gnomes.webp"
+    />
+    <meta
+      property="og:description"
+      content="Doodle Garden Gnomes is a charming online game where players tend to a magical garden inhabited by quirky gnomes. With colorful doodle-style graphics and engaging tasks, players can plant flowers, design pathways, and keep the mischievous gnomes in check for a delightful gaming experience."
+    />
+    <meta property="og:site_name" content="Doodle Cricket Game" />
+
+    <link
+      rel="canonical"
+      href="https://doodlecricket.github.io/doodle-garden-gnomes"
+    />
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+      defer
+    ></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        corePlugins: {
+          container: false,
+        },
+      };
+    </script>
+
+    <meta
+      name="description"
+      content="Doodle Garden Gnomes is a charming online game where players tend to a magical garden inhabited by quirky gnomes. With colorful doodle-style graphics and engaging tasks, players can plant flowers, design pathways, and keep the mischievous gnomes in check for a delightful gaming experience."
+    />
+
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="./icons/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="./icons/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="./icons/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="./icons/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="./icons/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="./icons/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="./icons/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="./icons/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./icons/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./icons/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./icons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="./icons/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./icons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta
+      name="msapplication-TileImage"
+      content="./icons/ms-icon-144x144.png"
+    />
+    <meta name="theme-color" content="#25e6f8" />
+
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/game.css" />
+    <style>
+      :root {
+        --ad-top-height: 50px;
+        --ad-bottom-height: 100px;
+        --ad-left-width: 300px;
+        --ad-right-width: 300px;
+
+        --ad-top-bg-color: #25e6f8;
+        --ad-bottom-bg-color: #25e6f8;
+        --ad-left-bg-color: #25e6f8;
+        --ad-right-bg-color: #25e6f8;
+      }
+
+      /* Game specific styles */
+      #game {
+        height: inherit;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--ad-top-bg-color) !important;
+      }
+
+      canvas {
+        height: 100%;
+        max-width: 100%;
+      }
+
+      @media (max-width: 720px) {
+        canvas {
+          height: auto;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        :root {
+          --ad-top-height: 90px;
+        }
+
+        .more-games,
+        .doodle-games {
+          top: 90px;
+        }
+      }
+    </style>
+
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3723218062742398"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      defer
+      data-domain="doodlecricket.github.io"
+      src="https://stats.senty.com.au/js/script.js"
+    ></script>
+
+    <script
+      async
+      src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+    ></script>
+    <script>
+      stpd = window.stpd || { que: [] };
+      window.googletag = window.googletag || {};
+      googletag.cmd = googletag.cmd || [];
+      var anchorSlot;
+      googletag.cmd.push(function () {
+        if (window.innerWidth >= 1200) {
+          anchorSlot = googletag
+            .defineOutOfPageSlot(
+              "/22921845643/doodlecricket_global_bottom_anchor",
+              googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR,
+            )
+            .addService(googletag.pubads());
+          googletag
+            .defineSlot(
+              "/147246189,22921845643/doodlecricket.github.io_300x600_desktop_sidebar_right",
+              [
+                [300, 600],
+                [160, 600],
+                [300, 250],
+                [300, 300],
+              ],
+              "doodlecricket_github_io_sidebar_right_desktop",
+            )
+            .addService(googletag.pubads());
+          googletag
+            .defineSlot(
+              "/147246189,22921845643/doodlecricket.github.io_300x600_desktop_sidebar_left",
+              [
+                [300, 600],
+                [160, 600],
+                [300, 250],
+                [300, 300],
+              ],
+              "doodlecricket_github_io_sidebar_left_desktop",
+            )
+            .addService(googletag.pubads());
+          googletag
+            .defineSlot(
+              "/147246189,22921845643/doodlecricket.github.io_1000x100_desktop_anchor",
+              [
+                [1000, 100],
+                [970, 90],
+                [728, 90],
+                [990, 90],
+                [970, 50],
+                [960, 90],
+                [950, 90],
+                [980, 90],
+              ],
+              "doodlecricket_github_io_anchor_ad_responsive",
+            )
+            .addService(googletag.pubads());
+          googletag
+            .defineSlot(
+              "/147246189,22921845643/doodlecricket.github.io_1000x100_desktop_top",
+              [
+                [1000, 100],
+                [970, 90],
+                [728, 90],
+                [990, 90],
+                [970, 50],
+                [960, 90],
+                [950, 90],
+                [980, 90],
+              ],
+              "doodlecricket_github_io_top_responsive",
+            )
+            .addService(googletag.pubads());
+        } else if (window.innerWidth >= 1024) {
+          googletag
+            .defineSlot(
+              "/147246189,22921845643/doodlecricket.github.io_1000x100_desktop_anchor",
+              [
+                [1000, 100],
+                [970, 90],
+                [728, 90],
+                [990, 90],
+                [970, 50],
+                [960, 90],
+                [950, 90],
+                [980, 90],
+              ],
+              "doodlecricket_github_io_anchor_ad_responsive",
+            )
+            .addService(googletag.pubads());
+          googletag
+            .defineSlot(
+              "/147246189,22921845643/doodlecricket.github.io_1000x100_desktop_top",
+              [
+                [1000, 100],
+                [970, 90],
+                [728, 90],
+                [990, 90],
+                [970, 50],
+                [960, 90],
+                [950, 90],
+                [980, 90],
+              ],
+              "doodlecricket_github_io_top_responsive",
+            )
+            .addService(googletag.pubads());
+        } else {
+          googletag
+            .defineSlot(
+              "/147246189,22921845643/doodlecricket.github.io_320x100_mobile_anchor",
+              [
+                [320, 100],
+                [320, 50],
+                [300, 100],
+                [300, 50],
+              ],
+              "doodlecricket_github_io_anchor_ad_responsive",
+            )
+            .addService(googletag.pubads());
+          googletag
+            .defineSlot(
+              "/147246189,22921845643/doodlecricket.github.io_320x50_mobile_top",
+              [
+                [320, 50],
+                [300, 50],
+              ],
+              "doodlecricket_github_io_top_responsive",
+            )
+            .addService(googletag.pubads());
+        }
+
+        var interstitialSlot = googletag.defineOutOfPageSlot(
+          "/147246189,22921845643/doodlecricket.github.io_interstitial",
+          googletag.enums.OutOfPageFormat.INTERSTITIAL,
+        );
+        if (interstitialSlot) interstitialSlot.addService(googletag.pubads());
+
+        googletag.pubads().disableInitialLoad();
+        googletag.pubads().enableSingleRequest();
+        googletag.pubads().collapseEmptyDivs();
+        googletag
+          .pubads()
+          .setTargeting("category", "sports_cricket")
+          .setTargeting("audience_interest", "sports_cricket");
+        googletag.enableServices();
+        googletag.display(interstitialSlot);
+        setInterval(function () {
+          googletag.pubads().refresh([anchorSlot]);
+        }, 30000);
+      });
+    </script>
+    <script async src="https://stpd.cloud/saas/7197"></script>
+    <script
+      src="https://cmp.setupcmp.com/cmp/cmp/cmp-stub.js"
+      data-prop-id="7133"
+    ></script>
+    <script
+      src="https://cmp.setupcmp.com/cmp/cmp/cmp-v1.js"
+      data-prop-stpd-cmp-id="7133"
+      async
+    ></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-105728110-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-105728110-1");
+    </script>
+  </head>
+
+  <body class="column">
+    <div class="ad-top" style="height: var(--ad-top-height) !important">
+      <div id="doodlecricket_github_io_top_responsive">
+        <script>
+          googletag.cmd.push(function () {
+            googletag.display("doodlecricket_github_io_top_responsive");
+          });
+        </script>
+      </div>
+    </div>
+    <div class="row">
+      
+      <div class="col content">
+        <div id="game"></div>
+        <div id="gameOverlay"></div>
+      </div>
+     
+    </div>
+   
+    
+    <div id="doodlecricket_github_io_anchor_ad_responsive">
+      <script>
+        googletag.cmd.push(function () {
+          googletag.display("doodlecricket_github_io_anchor_ad_responsive");
+        });
+      </script>
+    </div>
+    <script src="./js/createjs.js"></script>
+    <script src="./js/game.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Check if the page is loaded inside an iframe
+        if (window.location !== window.parent.location) {
+          // Get all anchor tags that are inside nav tags
+          const links = document.querySelectorAll("nav a");
+          // Loop through each link and set its target attribute to "_blank"
+          links.forEach(function (link) {
+            link.target = "_blank";
+          });
+        }
+      });
+    </script>
+    <script>
+      googletag.cmd.push(() => {
+        googletag.display(anchorSlot);
+      });
+    </script>
+  </body>
+</html>
