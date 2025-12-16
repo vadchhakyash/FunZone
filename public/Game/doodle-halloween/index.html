@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Doodle Halloween Online</title>
+    <script src="./loaders.js"></script>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@doodlecricket" />
+    <meta name="twitter:title" content="Doodle Halloween Online" />
+    <meta
+      name="twitter:description"
+      content="Engage in a thrilling gesture-based experience with our Doodle Halloween game! Use your creativity to draw shapes and banish ghosts from the haunted realm. With each precise stroke, you'll fend off spectral foes and unlock new levels of ghost-busting fun. Get ready to wield your artistic prowess in a spine-tingling showdown against the supernatural!"
+    />
+    <meta name="twitter:creator" content="@doodlecricket" />
+    <meta
+      name="twitter:image"
+      content="https://doodlecricket.github.io/doodle-halloween.png"
+    />
+
+    <meta property="og:title" content="Doodle Halloween Online" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://doodlecricket.github.io/doodle-halloween"
+    />
+    <meta
+      property="og:image"
+      content="https://doodlecricket.github.io/doodle-halloween.png"
+    />
+    <meta
+      property="og:description"
+      content="Engage in a thrilling gesture-based experience with our Doodle Halloween game! Use your creativity to draw shapes and banish ghosts from the haunted realm. With each precise stroke, you'll fend off spectral foes and unlock new levels of ghost-busting fun. Get ready to wield your artistic prowess in a spine-tingling showdown against the supernatural!"
+    />
+    <meta property="og:site_name" content="Doodle Cricket Game" />
+
+    <link
+      rel="canonical"
+      href="https://doodlecricket.github.io/doodle-halloween"
+    />
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+      defer
+    ></script>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script>
+      tailwind.config = {
+        corePlugins: {
+          container: false,
+        },
+      };
+    </script>
+
+    <meta
+      name="description"
+      content="Engage in a thrilling gesture-based experience with our Doodle Halloween game! Use your creativity to draw shapes and banish ghosts from the haunted realm. With each precise stroke, you'll fend off spectral foes and unlock new levels of ghost-busting fun. Get ready to wield your artistic prowess in a spine-tingling showdown against the supernatural!"
+    />
+
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="./icons/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="./icons/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="./icons/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="./icons/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="./icons/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="./icons/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="./icons/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="./icons/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./icons/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./icons/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./icons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="./icons/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./icons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta
+      name="msapplication-TileImage"
+      content="./icons/ms-icon-144x144.png"
+    />
+    <meta name="theme-color" content="#37394d" />
+
+    <link rel="stylesheet" href="./css/styles.css" />
+    <style>
+      :root {
+        --ad-top-height: 50px;
+        --ad-bottom-height: 100px;
+        --ad-left-width: 300px;
+        --ad-right-width: 300px;
+
+        --ad-top-bg-color: #37394d;
+        --ad-bottom-bg-color: #37394d;
+        --ad-left-bg-color: #37394d;
+        --ad-right-bg-color: #37394d;
+      }
+
+      .cricket-games {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 100px;
+        display: flex;
+        justify-content: flex-end;
+        z-index: 10;
+      }
+
+      .sticky-sidebar-video {
+        display: block;
+        position: fixed;
+        bottom: 107px;
+        width: 300px !important;
+        height: auto;
+        z-index: 10;
+        left: 0;
+      }
+
+      @media (max-width: 720px) {
+        canvas {
+          height: auto;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .left-sidebar {
+          left: 0;
+        }
+
+        .right-sidebar {
+          right: 0;
+        }
+
+        .sticky-sidebar {
+          display: block;
+          position: fixed;
+          top: 100px;
+          width: 300px;
+          height: 600px;
+          z-index: 10;
+        }
+
+        .sticky-sidebar-video {
+          display: block;
+          position: fixed;
+          bottom: 107px;
+          width: 300px !important;
+          height: auto;
+          z-index: 10;
+          left: 300px;
+        }
+
+        .more-games,
+        .doodle-games {
+          top: 90px;
+        }
+      }
+    </style>
+
+    <!-- <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3723218062742398"
+      crossorigin="anonymous"
+    ></script> -->
+
+    <script
+      defer
+      data-domain="doodlecricket.github.io"
+      src="https://stats.senty.com.au/js/script.js"
+    ></script>
+
+    <script>
+        
+      function loadVideo() {
+        return new Promise((resolve, reject) => {
+          const script = document.createElement("script");
+          script.src = "https://360playvid.info/slidepleer/s1992s.js";
+          script.async = true;
+          script.onload = resolve;
+          script.onerror = reject;
+          document.getElementById("playvid-wrapper").appendChild(script);
+        });
+      }
+
+      function loadJuice() {
+        document.querySelector("#splash").remove();
+
+        if (window.innerWidth >= 1024) {
+          loadVideo();
+        }
+
+        createScriptTag({
+          src: "./js/game.js",
+          async: true,
+        });
+
+        createScriptTag({
+          src: "https://securepubads.g.doubleclick.net/tag/js/gpt.js",
+          async: true,
+        });
+
+        createScriptTag({
+          inline: `
+      stpd = window.stpd || { que: [] };
+            window.googletag = window.googletag || {};
+            googletag.cmd = googletag.cmd || [];
+            var anchorSlot;
+
+            function giveReward() {
+              console.log("Reward given");
+              googletag
+                .pubads()
+                .removeEventListener("rewardedSlotClosed", dismissReward);
+            }
+
+            // For Rewarded ad
+            function dismissReward(evt) {
+              googletag.destroySlots([evt.rewardedSlot]);
+            }
+
+            // For Rewarded ad
+            function showAd() {
+              console.log("show");
+              googletag.cmd.push(function () {
+                var rewardedSlot = googletag.defineOutOfPageSlot(
+                  "/147246189,22921845643/doodlecricket.github.io_rewarded",
+                  googletag.enums.OutOfPageFormat.REWARDED,
+                );
+                if (rewardedSlot) rewardedSlot.addService(googletag.pubads());
+                googletag.enableServices();
+                googletag
+                  .pubads()
+                  .addEventListener("rewardedSlotReady", function (evt) {
+                    evt.makeRewardedVisible();
+                  });
+                googletag
+                  .pubads()
+                  .addEventListener("rewardedSlotClosed", dismissReward);
+                googletag
+                  .pubads()
+                  .addEventListener("rewardedSlotGranted", giveReward);
+                googletag.display(rewardedSlot);
+                googletag.pubads().refresh([rewardedSlot]);
+              });
+            }
+
+            googletag.cmd.push(function () {
+              anchorSlot = googletag
+                .defineOutOfPageSlot(
+                  "/22921845643/doodlecricket_global_bottom_anchor",
+                  googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR,
+                )
+                .addService(googletag.pubads());
+              if (window.innerWidth >= 1200) {
+                googletag
+                  .defineSlot(
+                    "/147246189,22921845643/doodlecricket.github.io_300x600_desktop_sidebar_right",
+                    [
+                      [300, 600],
+                      [160, 600],
+                      [300, 250],
+                      [300, 300],
+                    ],
+                    "doodlecricket_github_io_sidebar_right_desktop",
+                  )
+                  .addService(googletag.pubads());
+                googletag
+                  .defineSlot(
+                    "/147246189,22921845643/doodlecricket.github.io_300x600_desktop_sidebar_left",
+                    [
+                      [300, 600],
+                      [160, 600],
+                      [300, 250],
+                      [300, 300],
+                    ],
+                    "doodlecricket_github_io_sidebar_left_desktop",
+                  )
+                  .addService(googletag.pubads());
+                googletag
+                  .defineSlot(
+                    "/147246189,22921845643/doodlecricket.github.io_1000x100_desktop_anchor",
+                    [
+                      [1000, 100],
+                      [970, 90],
+                      [728, 90],
+                      [990, 90],
+                      [970, 50],
+                      [960, 90],
+                      [950, 90],
+                      [980, 90],
+                    ],
+                    "doodlecricket_github_io_anchor_ad_responsive",
+                  )
+                  .addService(googletag.pubads());
+                googletag
+                  .defineSlot(
+                    "/147246189,22921845643/doodlecricket.github.io_1000x100_desktop_top",
+                    [
+                      [1000, 100],
+                      [970, 90],
+                      [728, 90],
+                      [990, 90],
+                      [970, 50],
+                      [960, 90],
+                      [950, 90],
+                      [980, 90],
+                    ],
+                    "doodlecricket_github_io_top_responsive",
+                  )
+                  .addService(googletag.pubads());
+              } else if (window.innerWidth >= 1024) {
+                googletag
+                  .defineSlot(
+                    "/147246189,22921845643/doodlecricket.github.io_1000x100_desktop_anchor",
+                    [
+                      [1000, 100],
+                      [970, 90],
+                      [728, 90],
+                      [990, 90],
+                      [970, 50],
+                      [960, 90],
+                      [950, 90],
+                      [980, 90],
+                    ],
+                    "doodlecricket_github_io_anchor_ad_responsive",
+                  )
+                  .addService(googletag.pubads());
+                googletag
+                  .defineSlot(
+                    "/147246189,22921845643/doodlecricket.github.io_1000x100_desktop_top",
+                    [
+                      [1000, 100],
+                      [970, 90],
+                      [728, 90],
+                      [990, 90],
+                      [970, 50],
+                      [960, 90],
+                      [950, 90],
+                      [980, 90],
+                    ],
+                    "doodlecricket_github_io_top_responsive",
+                  )
+                  .addService(googletag.pubads());
+              } else {
+                googletag
+                  .defineSlot(
+                    "/147246189,22921845643/doodlecricket.github.io_320x100_mobile_anchor",
+                    [
+                      [320, 100],
+                      [320, 50],
+                      [300, 100],
+                      [300, 50],
+                    ],
+                    "doodlecricket_github_io_anchor_ad_responsive",
+                  )
+                  .addService(googletag.pubads());
+                googletag
+                  .defineSlot(
+                    "/147246189,22921845643/doodlecricket.github.io_320x50_mobile_top",
+                    [
+                      [320, 50],
+                      [300, 50],
+                    ],
+                    "doodlecricket_github_io_top_responsive",
+                  )
+                  .addService(googletag.pubads());
+              }
+
+              var interstitialSlot = googletag.defineOutOfPageSlot(
+                "/147246189,22921845643/doodlecricket.github.io_interstitial",
+                googletag.enums.OutOfPageFormat.INTERSTITIAL,
+              );
+              if (interstitialSlot) interstitialSlot.addService(googletag.pubads());
+
+              googletag.pubads().disableInitialLoad();
+              googletag.pubads().enableSingleRequest();
+              googletag.pubads().collapseEmptyDivs();
+              googletag
+                .pubads()
+                .setTargeting("category", "sports_cricket")
+                .setTargeting("audience_interest", "sports_cricket");
+              googletag.enableServices();
+              googletag.display(interstitialSlot);
+              setInterval(function () {
+                googletag.pubads().refresh([anchorSlot]);
+              }, 30000);
+              googletag.cmd.push(() => {
+                googletag.display(anchorSlot);
+              });
+            });
+                `,
+        });
+
+        createScriptTag({
+          src: "https://stpd.cloud/saas/7197",
+          async: true,
+        });
+
+        createScriptTag({
+          src: "https://cmp.setupcmp.com/cmp/cmp/cmp-v1.js",
+          "data-prop-stpd-cmp-id": "7133",
+          async: true,
+        });
+
+        createScriptTag({
+          src: "https://cmp.setupcmp.com/cmp/cmp/cmp-stub.js",
+          "data-prop-id": "7133",
+        });
+
+        createAdDisplayDiv(
+          "doodlecricket_github_io_top_responsive",
+          null,
+          ".ad-top",
+        );
+
+        createAdDisplayDiv(
+          "doodlecricket_github_io_sidebar_left_desktop",
+          "sticky-sidebar left-sidebar",
+          ".ad-left",
+          "display: inline-block; width: 300px; height: 600px",
+        );
+
+        createAdDisplayDiv(
+          "doodlecricket_github_io_sidebar_right_desktop",
+          "sticky-sidebar right-sidebar",
+          ".ad-right",
+          "display: inline-block; width: 300px; height: 600px",
+        );
+
+        createAdDisplayDiv("doodlecricket_github_io_anchor_ad_responsive");
+      }
+                
+
+      function checkRestart() {
+        if (new URLSearchParams(location.search).has("restart")) {
+          loadJuice();
+          showAd();
+          window.history.replaceState(
+            {},
+            document.title,
+            window.location.pathname,
+          );
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // Check if the page is loaded inside an iframe
+        if (window.location !== window.parent.location) {
+          // Get all anchor tags that are inside nav tags
+          const links = document.querySelectorAll("nav a");
+          // Loop through each link and set its target attribute to "_blank"
+          links.forEach(function (link) {
+            link.target = "_blank";
+          });
+        }
+
+        document.querySelector("#play").addEventListener("click", loadJuice);
+
+        checkRestart();
+      });
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-105728110-1"
+    ></script> -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-105728110-1");
+    </script>
+  </head>
+
+  <body class="">
+    <div
+      id="splash"
+      class="fixed h-screen inset-0 z-9999 flex items-center justify-center bg-gray-900 overflow-y-auto"
+    >
+      <div class="text-center">
+        <img
+          src="./icons/android-icon-192x192.png"
+          alt="Logo"
+          class="w-32 h-32 mx-auto mb-4"
+        />
+        <button
+          id="play"
+          class="pointer-events-auto px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 focus:outline-none"
+        >
+          ▶ Play
+        </button>
+        <div class="max-w-md mx-auto prose">
+          <p class="text-sm text-gray-400">
+            <strong>MAGIC CAT ACADEMY</strong><br />
+            Help Momo defend her Magic School! Draw the symbols that appear
+            above the ghosts to cast spells and defeat them. Be quick - if the
+            ghosts touch you, you'll lose a heart! Complete all 5 levels to save
+            the school.
+          </p>
+          <ul class="text-sm text-gray-400 list-disc list-inside">
+            <li>Use your mouse to draw the symbols</li>
+            <li>Match the patterns exactly</li>
+            <li>Protect your 5 hearts</li>
+            <li>Clear all waves of ghosts</li>
+          </ul>
+          <p class="text-sm text-gray-400">
+            Are you ready to become a master spellcaster?
+            <br />Click Play to Start
+          </p>
+        </div>
+      </div>
+    </div>
+<!-- 
+    <div class="sticky-sidebar-video" id="playvid-wrapper">
+      <svg
+        class="absolute animate-spin -ml-1 mr-3 h-5 w-5"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+      >
+        <circle
+          class="opacity-25"
+          cx="12"
+          cy="12"
+          r="10"
+          stroke="currentColor"
+          stroke-width="4"
+        ></circle>
+        <path
+          class="opacity-75"
+          fill="currentColor"
+          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+        ></path>
+      </svg>
+    </div>
+    -->
+
+    <div class="row">
+      <div id="game" class="col content">
+        <canvas
+          style="cursor: default; aspect-ratio: 640/360; width: 100%"
+          height="360"
+          width="640"
+        ></canvas>
+      </div>
+    </div>
+  </body>
+</html>

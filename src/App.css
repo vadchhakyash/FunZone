@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+/* GENERAL PAGE STYLE */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #f3f9ff, #ffffff, #e8f7ff);
+  color: #222;
+}
+
+/* CONTAINER */
+.arcade-container {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.arcade-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #ff7eb3, #ff758c, #ffb86c);
+  background-clip: text;
+  color: transparent;
+}
+
+.arcade-sub {
+  font-size: 1.1rem;
+  opacity: 0.7;
+  margin-bottom: 40px;
+}
+
+/* GRID */
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 35px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* CARD */
+.game-card {
+  background: white;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
+  border: 1px solid #f1f1f1;
+}
+
+.game-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* GAME IMAGE */
+.game-image {
+  display: block;
+  margin: 0 auto;           /* Centers the image horizontally */
+  width: 130px;
+  height: 130px;
+  border-radius: 20px;
+  object-fit: cover;
+  margin-bottom: 15px;
+  transition: 0.3s;
+}
+
+.game-card:hover .game-image {
+  transform: rotate(3deg) scale(1.05);
+}
+
+/* TITLES */
+.game-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+
+/* DESCRIPTION */
+.game-card p {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* PLAY BUTTON */
+.play-btn {
+  padding: 12px 30px;
+  border-radius: 30px;
+  background: linear-gradient(90deg, #7ee8fa, #80ff72);
+  color: #000;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+
+.play-btn:hover {
+  background: linear-gradient(90deg, #6df0ff, #6aff60);
+  transform: translateY(-3px);
+}
