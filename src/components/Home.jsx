@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./home.css";
+import { useMemo, useState } from "react";
 
 const games = [
   {
@@ -65,13 +65,34 @@ const games = [
 ];
 
 export default function Home() {
+  const [query, setQuery] = useState("");
+
+  const filteredGames = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    if (!q) return games;
+    return games.filter((game) =>
+      `${game.title} ${game.description}`.toLowerCase().includes(q)
+    );
+  }, [query]);
+
   return (
     <div className="arcade-container">
-      <h1 className="arcade-title">🎮 My Game Arcade</h1>
+      <h1 className="arcade-title"><span className="text-black">🎮</span> My Game Arcade</h1>
       <p className="arcade-sub">Choose a game and start having fun!</p>
 
+      <div className="search-bar">
+        <input
+          type="text"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Search games..."
+          className="search-input"
+          aria-label="Search games"
+        />
+      </div>
+
       <div className="game-grid">
-        {games.map((game) => (
+        {filteredGames.map((game) => (
           <div key={game.id} className="game-card">
             <img src={game.image} alt={game.title} className="game-image" />
 
@@ -83,7 +104,13 @@ export default function Home() {
             </Link>
           </div>
         ))}
+        {!filteredGames.length && (
+          <div className="empty-state">
+            <p>No games found for “{query}”.</p>
+          </div>
+        )}
       </div>
+
     </div>
   );
 }
